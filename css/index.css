@@ -168,13 +168,13 @@
   color: white;
 }
 
-.hero-secton-wrapper .bg-image-uae {
+.hero-secton-wrapper .bg-image-uae img {
   z-index: -1;
 }
 
-.hero-secton-wrapper {
+/* .hero-secton-wrapper {
   z-index: -22;
-}
+} */
 
 .work-header {
   overflow: hidden;

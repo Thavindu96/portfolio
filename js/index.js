@@ -106,3 +106,50 @@ gsap.utils.toArray(".section-header").forEach((header) => {
     "-=0.6",
   );
 });
+
+const backToTop = document.getElementById("backToTop");
+
+// Show button when scrolling
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+// Scroll to top smoothly
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+const titleText = "Thavindu Upulitha | Portfolio";
+let titleIndex = 0;
+let deleting = false;
+const titleSpeed = 150;
+const titleDelay = 1500;
+
+function animateTitle() {
+  if (!deleting) {
+    document.title = titleText.substring(0, titleIndex + 1);
+    titleIndex++;
+
+    if (titleIndex === titleText.length) {
+      setTimeout(() => (deleting = true), titleDelay);
+    }
+  } else {
+    document.title = titleText.substring(0, titleIndex - 1);
+    titleIndex--;
+
+    if (titleIndex === 0) {
+      deleting = false;
+    }
+  }
+
+  setTimeout(animateTitle, deleting ? 80 : titleSpeed);
+}
+
+animateTitle();

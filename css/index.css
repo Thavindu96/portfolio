@@ -239,3 +239,29 @@
 .fill-btn:hover {
   color: #000000;
 }
+
+#intro-text {
+  min-height: 48px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #030303, #02000c);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#backToTop:hover {
+  transform: translateY(-5px);
+}
